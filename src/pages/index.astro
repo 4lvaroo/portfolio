@@ -1,11 +1,41 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+import Badge from '../components/Badge.astro';
+import profilePhoto from '../assets/alvaro.jpg';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import SocialPills from '../components/SocialPills.astro';
+import LinkedInIcon from '../assets/icons/LinkedInIcon.astro';
+import GitHubIcon from '../assets/icons/GitHubIcon.astro';
+
+const linkedInUrl = "https://www.linkedin.com/in/%C3%A1lvaro-g%C3%B3mez-a4996436a/";
+const gitHubUrl = "https://github.com/4lvaroo";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Portfolio - Álvaro Gómez">
+	<main>
+		<section class="w-full lg:w-[740px] mx-auto py-44">
+			<img class="rounded-full w-12 h-12 mb-5" src={profilePhoto.src} alt="Álvaro photo"/>
+			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
+				Hi, I'm <span class="text-[#63e] opacity-80">Álvaro Gómez</span>
+				<a href={ linkedInUrl } target="_blank" rel="noopener noreferrer" class="flex justify-center items-center" >
+					<Badge>Looking for hire</Badge>
+				</a>
+			</h1>
+			<h2 class="text-2xl text-wrap">
+				I'm a full-stack developer with a passion for creating web applications and a ambition for learning new technologies. I specialize in building scalable and efficient solutions that enhance user experiences.
+			</h2>
+			
+			<nav class="flex gap-x-2">
+				<SocialPills href={ linkedInUrl }>
+					<LinkedInIcon class="w-6 h-6" />
+					LinkedIn
+				</SocialPills>
+				<SocialPills href={ gitHubUrl }>
+					<GitHubIcon class="w-6 h-6" />
+					GitHub
+				</SocialPills>
+			</nav>
+		</section>
+	</main>
 </Layout>
