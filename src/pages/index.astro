@@ -7,15 +7,19 @@ import profilePhoto from '../assets/alvaro.jpg';
 import SocialPills from '../components/SocialPills.astro';
 import LinkedInIcon from '../assets/icons/LinkedInIcon.astro';
 import GitHubIcon from '../assets/icons/GitHubIcon.astro';
+import MailIcon from '../assets/icons/MailIcon.astro';
+import Experience from '../components/Experience.astro';
 
 const linkedInUrl = "https://www.linkedin.com/in/%C3%A1lvaro-g%C3%B3mez-a4996436a/";
 const gitHubUrl = "https://github.com/4lvaroo";
+const mailUrl = "mailto:alvarogd548@gmail.com";
+
 ---
 
 <Layout title="Portfolio - Álvaro Gómez">
 	<main>
 		<section class="w-full lg:w-[740px] mx-auto py-44">
-			<img class="rounded-full w-12 h-12 mb-5" src={profilePhoto.src} alt="Álvaro photo"/>
+			<img class="rounded-full size-12 mb-5" src={profilePhoto.src} alt="Álvaro photo"/>
 			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
 				Hi, I'm <span class="text-[#63e] opacity-80">Álvaro Gómez</span>
 				<a href={ linkedInUrl } target="_blank" rel="noopener noreferrer" class="flex justify-center items-center" >
@@ -28,14 +32,22 @@ const gitHubUrl = "https://github.com/4lvaroo";
 			
 			<nav class="flex gap-x-2 mt-8">
 				<SocialPills href={ linkedInUrl }>
-					<LinkedInIcon class="w-6 h-6" />
+					<LinkedInIcon class="size-6" />
 					LinkedIn
 				</SocialPills>
 				<SocialPills href={ gitHubUrl }>
-					<GitHubIcon class="w-6 h-6" />
+					<GitHubIcon class="size-6" />
 					GitHub
 				</SocialPills>
+				<SocialPills href={ mailUrl }>
+					<MailIcon class="size-6" />
+					alvarogd548@gmail.com
+				</SocialPills>
 			</nav>
+		</section>
+
+		<section>
+			<Experience />
 		</section>
 	</main>
 </Layout>
